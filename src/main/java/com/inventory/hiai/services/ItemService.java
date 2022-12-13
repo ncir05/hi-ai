@@ -1,7 +1,6 @@
 package com.inventory.hiai.services;
 
 import com.inventory.hiai.entities.Items;
-import com.inventory.hiai.models.Item;
 import com.inventory.hiai.repos.ItemRepository;
 import org.springframework.stereotype.Service;
 
@@ -23,6 +22,10 @@ public class ItemService {
     public Items addItem(Items item) {
         System.out.println(item);
         return itemRepository.save(item);
+    }
+
+    public Items getItemById(Long id) {
+        return itemRepository.findById(id).orElse(null);
     }
 }
 
